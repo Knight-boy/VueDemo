@@ -1,0 +1,99 @@
+$blue: #3190e8;
+$bc: #e4e4e4;
+$fc: #fff;
+
+/**
+ *设置背景图片
+ */
+
+@mixin bgis($url) {
+	background-image: url('$url');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+/**
+ *设置边框圆角
+ */
+@mixin borderRadius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-o-border-radius: $radius;
+}
+
+/**
+ *定位全屏
+ */
+
+@mixin allcover {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/**
+ *水平居中
+ */
+
+@mixin clr {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/**
+ *垂直居中
+ */
+
+@mixin ctb {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/**
+ *水平垂直居中
+ */
+
+@mixin center {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/**
+ *设置宽高
+ */
+
+@mixin wh($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+/**
+ *设置字体样式
+ */
+
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+	font: #{$size} / #{$line-height} $family;
+}
+
+/**
+ *设置字体颜色
+ */
+
+@mixin sc($size, $color) {
+	font-size: $size;
+	color: $color;
+}
+
+/**
+ *布局和元素对齐方式
+ */
+
+@mixin fj($type: space-between) {
+	display: flex;
+	justify-content: $type;
+}
