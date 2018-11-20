@@ -24,9 +24,9 @@
 </template>
 
 <script>
-    import headTop from '../../components/header/head'
-    import {currentcity, searchplace} from '../../service/getData'
-    import {getStorage, setStorage, removeStorage} from '../../config/mUtils'
+    import headTop from '@/components/header/head'
+    import {currentcity, searchplace} from '@/service/getData'
+    import {getStorage, setStorage, removeStorage} from '@/config/mUtils'
 
     export default {
     	data(){

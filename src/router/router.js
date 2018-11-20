@@ -2,17 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../App'
 import {routerMode} from '../config/env'
-
+/*按需加载组件*/
 const home = r => require.ensure([], () => r(require('../page/home/home')), 'home');
 const city = r => require.ensure([], () => r(require('../page/city/city')), 'city');
-
+const login = r => require.ensure([], () => r(require('../page/login/login')), 'login');
 Vue.use(Router)
 
 export default new Router({
   routes : [
     {
       path : '/',
-      // name : 'TodoList',
+      // name : 'Home',
       component : App,
       children: [
       	{
@@ -26,7 +26,11 @@ export default new Router({
       	{
       		path: '/city/:cityid',
       		component: city
-      	}
+      	},
+        {
+          path: '/login',
+          component: login
+        }
       ]
     }
   ],

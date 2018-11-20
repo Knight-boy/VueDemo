@@ -46,7 +46,42 @@ export const searchplace = (cityid, value) => fetch('/api/v1/pois', {
 });
 
 /**
- *
+ *位置信息
  */
  export const msiteAddress = geohash => fetch('/api/v2/pois/' + geohash);
 
+/**
+ *获取验证码
+ */
+export const mobileCode = phone => fetch('/api/v4/mobile/verify_code/send', {
+	mobile: phone,
+	scene: 'login',
+	type: 'sms'
+}, 'POST');
+
+/**
+ *图片验证码
+ */
+export const getcaptchas = () => fetch('/api/v1/captchas',{},'POST');
+
+/**
+ *
+ */
+export const checkExsis = (checkNumber, type) => fetch('/api/v1/users/exists', {
+	[type]: checkNumber,
+	type
+});
+
+/**
+ * 手机号登录
+ */
+export const sendLogin = (code, mobile, validate_token) => fetch('/api/v1/login/app_mobile',{
+	code,
+	mobile,
+	validate_token
+},'POST');
+
+/**
+ *密码登录
+ */
+export const accountLogin = (username, password, captcha_code) => fetch('/api/v2/login',{username, password, captcha_code}, 'POST');
